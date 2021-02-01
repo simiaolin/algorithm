@@ -8,6 +8,7 @@ public class MaximumScore1537 {
     //1. 可以用long来存
     //2. 计算单段value的时候是不能用mod的， 会导致结果出错！
     //3. int的最大值大概是20亿， 就是2 * 1e9
+    //4. 如果只是记录 index 而不是同步累加的话 会浪费多一次遍历
 
     public int maxSum(int[] nums1, int[] nums2) {
         int MOD_VALUE = (int) (1e9 + 7);
