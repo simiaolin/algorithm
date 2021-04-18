@@ -34,6 +34,13 @@ public class DSolution {
             char l = cards.charAt(begin);
             char r = cards.charAt(end - 1);
             if (l == currentPlayer &&  r == currentPlayer) {
+                if (cards.charAt(begin + 1) == currentPlayer) {
+                    return getResult(cards, begin+1, end, getNextPlayer(currentPlayer));
+                }
+
+                if (cards.charAt(end - 1 - 1) == l) {
+                    return getResult(cards, begin, end - 1, getNextPlayer(currentPlayer));
+                }
                 Result chooseleft = getResult(cards, begin + 1, end, getNextPlayer(currentPlayer));
                 Result chooseright = getResult(cards, begin, end - 1, getNextPlayer(currentPlayer));
                 return betterResult(currentPlayer, chooseleft, chooseright);
