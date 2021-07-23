@@ -15,4 +15,21 @@ public class BST {
         this.right = right;
     }
 
+
+    public void insert(int value) {
+        if (value < this.value) {
+            if (left == null) {
+                left = new BST(value);
+            } else {
+                left.insert(value);
+            }
+        } else {
+            if (right == null) {
+                right = new BST(value);
+            } else {
+                right.insert(value);
+            }
+        }
+    }
+
 }
